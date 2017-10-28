@@ -36,7 +36,7 @@ func dbFunc(c *gin.Context) {
 func insertAccelData(c *gin.Context) {
 
 
-	result, err := db.Exec("INSERT INTO player (player_id, game_id, hit_mag) VALUES ($1,$2,$3)", c.PostForm("player_id"), c.PostForm("game_id"), c.PostForm("hit_mag"))
+	result, err := db.Exec("INSERT INTO hit_data (player_id, game_id, hit_mag) VALUES ($1,$2,$3)", c.PostForm("player_id"), c.PostForm("game_id"), c.PostForm("hit_mag"))
 
 	if err != nil {
 		c.String(http.StatusInternalServerError,
