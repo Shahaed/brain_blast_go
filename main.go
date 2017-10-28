@@ -26,7 +26,7 @@ func exitErrorf(msg string, args ...interface{}) {
 }
 
 func dbFunc(c *gin.Context) {
-    if _, err := db.Exec("INSERT INTO institutions (name,institution_id) VALUES ('Citi', 'ins_5')"); err != nil {
+    if _, err := db.Exec("select * from player"); err != nil {
         c.String(http.StatusInternalServerError,
             fmt.Sprintf("Error inserting institution: %q", err))
         return
